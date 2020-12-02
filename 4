@@ -1,0 +1,31 @@
+SELECT DISTINCT CoinID FROM Availability;
+
+SELECT CollectorID, Name, Surname, Growth
+FROM collector
+GROUP BY Growth;
+
+SELECT CollectorID, MAX(Quantity) AS 'Наибольшее количество монет одного вида'
+FROM Availability
+GROUP BY CollectorID;
+
+SELECT CollectorID, COUNT(Quantity) AS 'Количество разновидностей монет'
+FROM Availability
+GROUP BY CollectorID;
+
+SELECT CollectorID, COUNT(Quantity) AS 'Количество разновидностей монет'
+FROM Availability
+GROUP BY CollectorID
+HAVING COUNT(Quantity) > 2;
+
+SELECT *
+FROM collector
+ORDER BY Age DESC;
+
+SELECT Name
+FROM coin
+WHERE Country = 'США'
+SELECT Name
+FROM collector
+WHERE Country = 'США';
+
+SELECT * FROM collector WHERE Country = 'США';
